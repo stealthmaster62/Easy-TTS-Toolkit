@@ -46,9 +46,6 @@ STYLE_PREFIXES = {
 }
 
 def speak(text: str, style: str = None):
-    """
-    Azure TTS → VB-Cable playback with style prefix support.
-    """
 
     detected_style = None
 
