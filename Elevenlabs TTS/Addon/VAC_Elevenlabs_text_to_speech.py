@@ -34,7 +34,7 @@ def _get_device_index():
 def speak(text: str):
     response = elevenlabs.text_to_speech.convert(
         voice_id="Hjzqw9NR0xFMYU9Us0DL",
-        output_format="pcm_32000",
+        output_format="pcm_44000",
         text=text,
         model_id="eleven_flash_v2_5"
     )
@@ -48,7 +48,7 @@ def speak(text: str):
                 f.write(chunk)
 
     data = np.fromfile(path, dtype=np.int16).astype(np.float32) / 32768.0
-    samplerate = 32000
+    samplerate = 44000
 
     if data.ndim > 1:
         data = data.mean(axis=1)
