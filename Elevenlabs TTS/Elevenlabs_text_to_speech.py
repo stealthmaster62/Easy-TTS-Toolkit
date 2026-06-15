@@ -1,29 +1,21 @@
 import os
-from typing import IO
-from io import BytesIO
+from elevenlabs import play, stream
 from elevenlabs.client import ElevenLabs
 import sounddevice as sd
 import soundfile as sf
+import numpy as np
+
 
 ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
 elevenlabs = ElevenLabs(
     api_key=ELEVENLABS_API_KEY,
 )
 
-def speak(text: str) -> IO[bytes]:
-    response = elevenlabs.text_to_speech.stream(
+def speak(text: str):
+    response = elevenlabs.text_to_speech.convert(
         voice_id="Hjzqw9NR0xFMYU9Us0DL",
-        output_format="pcm_32000",
+        output_format="mp3_44100_128",
         text=text,
         model_id="eleven_flash_v2_5"
     )
-
-    audio_stream = BytesIO()
-
-    for chunk in response:
-        if chunk:
-            audio_stream.write(chunk)
-
-    audio_stream.seek(0)
-
-    return audio_stream
+    play(response)
