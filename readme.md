@@ -53,4 +53,4 @@ There's 11 voice styles you can use. The default voice style it uses if you don'
 
 You can read more info about all of these in their respective readme files.
 
-*hope you find this file useful, I had fun making it!*
+*hope you find this repo useful, I had fun making it!*
