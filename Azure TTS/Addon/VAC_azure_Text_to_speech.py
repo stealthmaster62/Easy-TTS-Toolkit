@@ -70,18 +70,14 @@ def speak(text: str, style: str = None):
 
     detected_style = None
 
-    # =========================
-    # PREFIX DETECTION
-    # =========================
+
     for prefix, mapped_style in STYLE_PREFIXES.items():
         if text.lower().startswith(prefix):
             detected_style = mapped_style
             text = text[len(prefix):].strip()
             break
 
-    # =========================
-    # STYLE RESOLUTION
-    # =========================
+
     if detected_style == "random":
         style = random.choice(STYLES)
     elif detected_style:
@@ -89,9 +85,7 @@ def speak(text: str, style: str = None):
     elif style is None:
         style = random.choice(STYLES)
 
-    # =========================
-    # AZURE TTS
-    # =========================
+
     speech_config = speechsdk.SpeechConfig(
         subscription=SPEECH_KEY,
         region=SPEECH_REGION
