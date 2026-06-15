@@ -16,6 +16,9 @@ It's very simple to use, literally as easy as a print statement once setup.
  - *Amazon Polly*
  - *gTTS*
 
+4) Whichever you choose. Make sure to go through the readme files there to figure out how to setup what you need to use it. The only 1 that requires 0 external setup is gTTS. If you're just looking to quickly implement TTS without worrying about how it sounds. I recommend that.
+
+## Voices
 All voices provide different experiences, and all but Elevenlabs are practically free as the point of usage until it will cost you money is far beyond what most will ever use.
 
 **Elevenlabs** - Very realistic sounding, recommended for reading long sentences especially if you'd like a lot of emotion throughout. You get a free 10000 credits per month. However you can upgrade your subscription to get more voices, and more credits. Not sponsored!!!
