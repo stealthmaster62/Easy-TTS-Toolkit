@@ -1,6 +1,6 @@
 # Easy TTS toolkit
 
-This is my definitive easy use TTS toolkit! Written by Miguel-Arden.
+This is my definitive easy use TTS toolkit! Written by https://github.com/Miguel-Arden
 You are welcome to do literally whatever you want with this code, credit is appreciated but not necessary.
 
 It's very simple to use, literally as easy as a print statement once setup.
@@ -16,5 +16,12 @@ It's very simple to use, literally as easy as a print statement once setup.
  - Amazon Polly
  - gTTS
 
-All voices provide different things, the easiest to use is gTTS as it literally requires 0 setup aside from just downloading the module which you just did.
+All voices provide different experiences, and all but Elevenlabs are practically free as the point of usage until it will cost you money is far beyond what most will ever use.
+
+Elevenlabs - Very realistic sounding, recommended for reading long sentences especially if you'd like a lot of emotion throughout. You get a free 10000 credits per month. However you can upgrade your subscription to get more voices, and more credits. Not sponsored!!!
+
+Microsoft Azure - Robotic, similar to Polly voices but much more versatile. You have an option to write prefixes before text you want it to read which will change the way it sounds.
+Example:
+```python
+speak("(shouting) I don't believe it!")```
 
