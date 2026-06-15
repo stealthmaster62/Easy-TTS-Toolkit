@@ -3,4 +3,13 @@ from Azure_Text_to_speech import speak
 
 speak("(random) Testing Azure TTS! Boy I sure do feel like starring the repo I downloaded this from!")
 
+
+#if you want the TTS to say a variable.
+var = "test"
+
+speak(f"hello this is a {var}")
+
+print("Done talking!")
+speak("Done talking!")
+
 #if testing with the VAC version remove the hashtag in front of line 2 and delete line 1

@@ -38,7 +38,7 @@ You can read more info about all of these in their respective readme files.
 
 ## Usage
 
-Copy the file of your choice to anyone of your projects
+Copy the file of your choice to anyone of your projects, all files have a test usage file that you can use before copying anything.
 
 ```python
 from X_Text_to_speech import speak
