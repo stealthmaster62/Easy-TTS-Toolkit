@@ -43,7 +43,7 @@ Example:
 ```python
 speak("(shouting) I don't believe it!")
 ```
-There's 11 voice styles you can use. The default voice style it uses if you don't use a prefix is "chat". You can view the list of styles at the top of the Azure file(s).
+There's 11 voice styles you can use. The default voice style it uses if you don't use a prefix is "chat". You can view the list of styles in the Azure readme file.
 
 
 **Polly** - Famously used in Twitch TTS a lot. It's likely you've heard these voices a lot. It's a simple voice, fun to listen to.
