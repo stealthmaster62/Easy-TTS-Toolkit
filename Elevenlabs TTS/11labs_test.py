@@ -1,5 +1,5 @@
 from Elevenlabs_text_to_speech import speak
-#from Addon.VAC_Elevenlabs_text_to_speech import speak
+#from VAC_Versions.VAC_Elevenlabs_text_to_speech import speak
 
 speak("Testing Elevenlabs TTS! Boy I sure do feel like starring the repo I downloaded this from!")
 
