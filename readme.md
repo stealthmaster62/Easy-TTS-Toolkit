@@ -34,7 +34,7 @@ speak(f"hello this is a {var}")
 ```
 
 ## Voices
-All voices provide different experiences, and all but Elevenlabs are practically free as the point of usage until it will cost you money is far beyond what most will ever use.
+All the voices but Elevenlabs are practically free as the point of usage until it will cost you money is far beyond what most will ever use.
 
 **Elevenlabs** - Very realistic sounding, recommended for reading long sentences especially if you'd like a lot of emotion throughout. You get a free 10000 credits per month. However you can upgrade your subscription to get more voices, and more credits. Not sponsored!!!
 
