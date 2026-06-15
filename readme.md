@@ -20,7 +20,6 @@ All voices provide different experiences, and all but Elevenlabs are practically
 
 **Elevenlabs** - Very realistic sounding, recommended for reading long sentences especially if you'd like a lot of emotion throughout. You get a free 10000 credits per month. However you can upgrade your subscription to get more voices, and more credits. Not sponsored!!!
 
----
 
 **Microsoft Azure** - Robotic, similar to Polly voices but much more versatile. You have an option to write prefixes before text you want it to read which will change the way it sounds.
 Example:
@@ -29,11 +28,9 @@ speak("(shouting) I don't believe it!")
 ```
 There's 11 voice styles you can use. The default voice style it uses if you don't use a prefix is "chat". You can view the list of styles at the top of the Azure file(s).
 
----
 
 **Polly** - Famously used in Twitch TTS a lot. It's likely you've heard these voices a lot.
 
----
 
 **gTTS** - Requires 0 setup and is completely free. Recommended for the most effortless experience adding this toolkit to your projects.
 
