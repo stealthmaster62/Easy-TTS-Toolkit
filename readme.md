@@ -46,6 +46,6 @@ speak("Test!")
 
 var = "test"
 
-speak(f"hello this is a {test}")
+speak(f"hello this is a {var}")
 ```
 *hope you find this file useful, I had fun making it!*
