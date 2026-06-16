@@ -19,3 +19,8 @@ from Elevenlabs_text_to_speech.py import speak
 
 speak("I am bald")
 ```
+
+## Info
+
+With 11labs you get 10k credits per month for free. Which should be enough.
+but to use more credits and get different non-default voices you must upgrade subscription.
