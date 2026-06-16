@@ -2,8 +2,8 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-#from Azure_Text_to_speech import speak
-from VAC_Versions.VAC_azure_Text_to_speech import speak
+from Azure_Text_to_speech import speak
+#from VAC_Versions.VAC_azure_Text_to_speech import speak
 
 speak("(random) Testing Azure TTS! Boy I sure do feel like starring the repo I downloaded this from!")
 
