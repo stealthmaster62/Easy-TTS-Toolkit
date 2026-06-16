@@ -6,6 +6,18 @@ It's a bit rushed so there's not much consistency between how each file works. B
 This is my definitive easy use TTS toolkit! Written by [Miguel Arden](https://github.com/Miguel-Arden)
 You are welcome to do literally whatever you want with this code, credit is appreciated but not necessary.
 
+### Billing and safety notice
+This project includes examples for services that may charge based on usage. It does not include any API keys or account credentials.
+
+- gTTS: free to use and requires no external API key.
+- Azure: has a free tier, but it can charge if you exceed the quota or if your subscription is not on the free tier.
+- Polly: AWS free tier is limited, and charges may apply after the allowance or after the first 12 months.
+- ElevenLabs: includes a monthly free credit allotment, but usage beyond that will cost money in the
+form of a paid subscription. Unless you enable pay as you go, you are at no risk of facing charges
+without warning.
+
+Use these services at your own risk. Monitor your account billing carefully and do not run large batches of text without understanding the cost.
+
 It's very simple to use, literally as easy as a print statement once setup.
 
 ## Setup
@@ -37,9 +49,9 @@ speak(f"hello this is a {var}")
 ```
 
 ## Voices
-All the voices but Elevenlabs are practically free as the point of usage until it will cost you money is far beyond what most will ever use.
+gTTS is free. Azure and Polly may be free within their account limits, but those services can charge once you exceed the free quota or if your account is on a paid tier. ElevenLabs is the most likely to incur direct usage costs.
 
-**Elevenlabs** - Very realistic sounding, recommended for reading long sentences especially if you'd like a lot of emotion throughout. You get a free 10000 credits per month. However you can upgrade your subscription to get more voices, and more credits. Not sponsored!!!
+**Elevenlabs** - Very realistic sounding, recommended for reading long sentences especially if you'd like a lot of emotion throughout. You get a free 10,000 credits per month in the default plan. If you use more than the free credits, you will need to upgrade your subscription or pay for additional usage. Not sponsored!!!
 
 **Microsoft Azure** - Robotic, similar to Polly voices but much more versatile. You have an option to write prefixes before text you want it to read which will change the way it sounds.
 Example:
@@ -57,3 +69,5 @@ There's 11 voice styles you can use. The default voice style it uses if you don'
 You can read more info about all of these in their respective readme files.
 
 *hope you find this repo useful, I had fun making it!*
+
+> Disclaimer: This repository is provided as-is. The author is not responsible for any charges or account usage resulting from running this code.

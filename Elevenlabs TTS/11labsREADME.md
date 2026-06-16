@@ -22,5 +22,6 @@ speak("I am bald")
 
 ## Info
 
-With 11labs you get 10k credits per month for free. Which should be enough.
-but to use more credits and get different non-default voices you must upgrade subscription.
+With ElevenLabs you get 10,000 free credits per month on the default plan. That is often enough for short usage, but longer text or frequent calls can consume credits quickly.
+
+Unless you have pay as you go enabled. If you run out of credits Elevenlabs will not charge you without warning.

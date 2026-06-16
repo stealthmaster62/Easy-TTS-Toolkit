@@ -10,6 +10,11 @@ Simple voices that sound great!
 
 3) Click on your username in the IAM dashboard, Look for the security credentials tabm, scroll down to access keys and click create access key. Copy the Access key ID and put it into your environment variables with the name "AWS_ACCESS_KEY". Do the same with your secret with the name "AWS_SECRET"
 
+### Cost and billing
+AWS Free Tier is only available for eligible accounts and is generally limited to the first 12 months. After that, Amazon Polly may charge per character depending on the voice model and region.
+
+Set an AWS budget alert and monitor your billing dashboard before using this code in production or with large amounts of text. This repository and author are not responsible for any AWS charges.
+
 ## Usage
 
 make sure to run run "pip install -r requirements.txt" in the terminal to install all the modules.

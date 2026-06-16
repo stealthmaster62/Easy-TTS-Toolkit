@@ -13,7 +13,12 @@ In this file I'll run through:
 
 4) once the resource has deployed find "Keys and endpoint", copy your key and put that into your environment variables listed as "AZURE_SPEECH_KEY"
 
-I'm pretty positive that the free tier gives you 500k characters a month permanently, so it shouldn't charge you anything. (assuming you don't get near 500k characters.)
+### Cost and billing
+The free tier of Azure speech is generally around 500k characters per month, but you should verify the current details in the Azure portal and monitor your usage.
+
+This code will synthesize every character you send to Azure, so long paragraphs or repeated calls can add up quickly. Use your own Azure account and review billing alerts before running heavy workloads.
+
+This repository and author are not responsible for any Azure charges.
 
 ## Usage
 
