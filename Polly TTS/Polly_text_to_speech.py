@@ -1,8 +1,6 @@
 import os
-import tempfile
 import boto3
 import sounddevice as sd
-import soundfile as sf
 import numpy as np
 
 ACCESS_KEY = os.getenv("AWS_ACCESS_KEY")
@@ -21,8 +19,15 @@ def speak(text):
     response = client.synthesize_speech(VoiceId='Brian',
                     Text=text,
                     OutputFormat='pcm',
-                    Engine='standard')
+                    Engine='standard',
+                    SampleRate='16000')
     
     audio_data = response["AudioStream"].read()
 
-    np.frombuffer(audio_data, dtype=np.int16).astype(np.float32) / 32768.0
+    samples = np.frombuffer(audio_data, dtype=np.int16).astype(np.float32) / 32768.0
+
+    sd.play(
+        samples,
+        samplerate=16000,
+        blocking=True
+    )
