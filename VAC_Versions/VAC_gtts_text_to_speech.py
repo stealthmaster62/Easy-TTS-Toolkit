@@ -7,7 +7,6 @@ DEVICE_NAME = 'CABLE Input'
 
 _device_index_cache = None
 
-
 def _get_device_index():
     global _device_index_cache
 
@@ -21,24 +20,27 @@ def _get_device_index():
 
     raise ValueError(f"Audio device not found: {DEVICE_NAME}")
 
+def speak(text_to_speak):
 
-def speak(text):
+    sentences = [sentence.strip() for sentence in text_to_speak.split(". ") if sentence.strip()] 
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as f:
-        temp_file_path = f.name
+    for sentence in sentences:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_audio_file:
+            temp_file_path = temp_audio_file.name
 
-    tts = gtts.gTTS(text=text, lang='en')
-    tts.save(temp_file_path)
+        tts_engine = gtts.gTTS(text=sentence, lang='en')
 
-    audio_samples, sample_rate = sf.read(temp_file_path, dtype="float32")
+        try:
+            tts_engine.save(temp_file_path)
+            
+            raw_audio, sample_rate = sf.read(temp_file_path, dtype="float32")
+            
+            if raw_audio.ndim > 1:
+                processed_audio = raw_audio.mean(axis=1)
+            else:
+                processed_audio = raw_audio
 
-    if audio_samples.ndim > 1:
-        audio_samples = audio_samples.mean(axis=1)
-
-    sd.play(audio_samples,
-        sample_rate,
-        blocking=True,
-        device=_get_device_index()
-    )
-
-    sd.stop()
+            sd.play(processed_audio, sample_rate, blocking=True)
+        
+        except (gtts.tts.gTTSError, sf.SoundFileError) as ahhellnah:
+            print(f"gTTS generation error: {ahhellnah}")

@@ -1,19 +1,10 @@
 from Polly_text_to_speech import speak
 #from Addon.VAC_gtts_text_to_speech import speak
-import time
 
-speak("(random) Testing Polly TTS! Boy I sure do feel like starring the repo I downloaded this from!")
-
+speak("Testing Polly TTS! Boy I sure do feel like starring the repo I downloaded this from!")
 
 #if you want the TTS to say a variable.
-var = "test"
-
-speak(f"hello this is a {var}")
-
-print("Done talking!")
-speak("Done talking!")
-
-speak("What the fuck did you just fucking say about me, you little bitch?" \
+var = "What the fuck did you just fucking say about me, you little bitch?" \
 "I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. " \
 "I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. " \
 "I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. " \
@@ -25,6 +16,10 @@ speak("What the fuck did you just fucking say about me, you little bitch?" \
 "and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could" \
 "have known what unholy retribution your little 'clever' comment was about to bring down upon you, maybe you would have held your fucking tongue. "
 " But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. "
-"You're fucking dead, kiddo. ")
+"You're fucking dead, kiddo." 
+#THIS IS ONLY HERE CAUSE THE BRIAN VOICE SOUNDS AMAZING WHEN IT READS THIS COPYPASTA.
+#I SUGGEST DELETING THIS BEFORE TESTING YOU'LL BE LISTENING TO IT FOREVER
+
+speak(f"{var}")
 
 #if testing with the VAC version remove the hashtag in front of line 2 and delete line 1
