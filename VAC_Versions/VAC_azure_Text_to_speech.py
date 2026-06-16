@@ -88,12 +88,12 @@ def speak(text: str, style: str = None):
         region=SPEECH_REGION
     )
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
-        path = f.name
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio_file:
+        temp_file_path = temp_audio_file.name
 
     synthesizer = speechsdk.SpeechSynthesizer(
         speech_config=speech_config,
-        audio_config=speechsdk.audio.AudioOutputConfig(filename=path)
+        audio_config=speechsdk.audio.AudioOutputConfig(filename=temp_file_path)
     )
 
     ssml = f"""
@@ -116,14 +116,14 @@ def speak(text: str, style: str = None):
     if result.reason != speechsdk.ResultReason.SynthesizingAudioCompleted:
         raise RuntimeError(f"TTS failed: {result.reason}")
 
-    data, samplerate = sf.read(path, dtype="float32")
+    audio_samples, sample_rate = sf.read(temp_file_path, dtype="float32")
 
-    if data.ndim > 1:
-        data = data.mean(axis=1)
+    if audio_samples.ndim > 1:
+        audio_samples = audio_samples.mean(axis=1)
 
     sd.play(
-        data,
-        samplerate,
+        audio_samples,
+        sample_rate,
         device=_get_device_index(),
         blocking=True
     )
