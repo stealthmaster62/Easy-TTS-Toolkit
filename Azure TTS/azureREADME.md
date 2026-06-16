@@ -28,6 +28,8 @@ make sure to run run "pip install -r requirements.txt" in the terminal to instal
 once you've installed the requirements, copy the azure file into a project of your choice.
 then you can use
 ```python
+from Azure_Text_to_speech import speak
+
 speak("X")
 ```
 
