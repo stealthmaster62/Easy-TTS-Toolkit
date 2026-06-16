@@ -1,6 +1,9 @@
 # Easy TTS toolkit
 
-This is my definitive easy use TTS toolkit! Written by https://github.com/Miguel-Arden
+Spoiler alert: this code is BAD
+It's a bit rushed so there's not much consistency between how each file works. But all that matters is that it works. #Pragmatism #slop
+
+This is my definitive easy use TTS toolkit! Written by [Miguel Arden](https://github.com/Miguel-Arden)
 You are welcome to do literally whatever you want with this code, credit is appreciated but not necessary.
 
 It's very simple to use, literally as easy as a print statement once setup.
