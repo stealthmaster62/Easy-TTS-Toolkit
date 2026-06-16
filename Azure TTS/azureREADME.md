@@ -13,7 +13,7 @@ In this file I'll run through:
 
 4) once the resource has deployed find "Keys and endpoint", copy your key and put that into your environment variables listed as "AZURE_SPEECH_KEY"
 
-I'm pretty positive that the free tier gives you 500k characters a month permanently, so it shouldn't charge you anything.
+I'm pretty positive that the free tier gives you 500k characters a month permanently, so it shouldn't charge you anything. (assuming you don't get near 500k characters.)
 
 ## Usage
 
