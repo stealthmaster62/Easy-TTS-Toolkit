@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from Elevenlabs_text_to_speech import speak
 #from VAC_Versions.VAC_Elevenlabs_text_to_speech import speak
 

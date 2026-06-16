@@ -30,8 +30,7 @@ def _get_device_index():
             _device_index_cache = device_index
             return device_index
         
-        raise ValueError(f"audio device not found: {DEVICE_NAME}")
-    
+    raise ValueError(f"audio device not found: {DEVICE_NAME}")
 
 def speak(text):
     response = client.synthesize_speech(VoiceId='Brian',
@@ -48,5 +47,4 @@ def speak(text):
         samples,
         samplerate=16000,
         blocking=True,
-        device=_get_device_index
-    )
+        device=_get_device_index())
