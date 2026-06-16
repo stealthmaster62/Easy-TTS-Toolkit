@@ -25,13 +25,13 @@ def speak(text: str):
 
     samplerate = 32000
 
-    q = queue.Queue(maxsize=50)
+    audio_queue = queue.Queue(maxsize=50)
     producer_done = threading.Event()
 
     def producer():
         for chunk in response:
             if chunk:
-                q.put(chunk)
+                audio_queue.put(chunk)
         producer_done.set()
 
     prod_thread = threading.Thread(target=producer, daemon=True)
@@ -41,13 +41,11 @@ def speak(text: str):
 
     def callback(outdata, frames, time_info, status):
         nonlocal buf
-        # outdata is float32 shape (frames, channels)
         needed_bytes = frames * 2  # int16 mono
 
-        # Pull available chunks into buffer (non-blocking)
         try:
             while len(buf) < needed_bytes:
-                item = q.get_nowait()
+                item = audio_queue.get_nowait()
                 buf.extend(item)
         except queue.Empty:
             pass
@@ -70,13 +68,10 @@ def speak(text: str):
                 outdata.fill(0)
 
         # stop when producer finished and no buffered data left
-        if producer_done.is_set() and q.empty() and len(buf) == 0:
+        if producer_done.is_set() and audio_queue.empty() and len(buf) == 0:
             raise sd.CallbackStop
 
     with sd.OutputStream(samplerate=samplerate, channels=1, dtype='float32', callback=callback):
         # block until stream stops
-        while not (producer_done.is_set() and q.empty() and len(buf) == 0):
+        while not (producer_done.is_set() and audio_queue.empty() and len(buf) == 0):
             time.sleep(0.02)
-
-
-sd.stop()
