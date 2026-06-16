@@ -1,14 +1,9 @@
-Fortunately, GTTS literally requires 0 external setup
+Fortunately, GTTS literally requires 0 external setup, but it does sound the worst.
 
-add gtts_text_to_speech.py (or the virtual audio cable version if needed) to any project
+once you've installed the requirements, copy the gtts file into a project of your choice. Then do:
 
 ```python
 from gtts_text_to_speech.py import speak
 
-speak("hello")
-
-#and of course, if you want to say a variable do:
-var = 'test'
-speak(f"this is a {var}")
-#and it will say
+speak("awfoijrfopjrtojgo")
 ```
