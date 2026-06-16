@@ -1,7 +1,6 @@
 ## Microsoft Azure
 
 In this file I'll run through:
----
 - How to properly setup Microsoft azure
 - And how to use this file.
 
@@ -13,7 +12,6 @@ In this file I'll run through:
 3) create it and pick your region. I picked "eastus" and have no issues despite not being in that region. Then select free tier
 
 4) once the resource has deployed find "Keys and endpoint", copy your key and put that into your environment variables listed as "AZURE_SPEECH_KEY"
----
 
 I'm pretty positive that the free tier gives you 500k characters a month permanently, so it shouldn't charge you anything.
 
