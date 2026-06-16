@@ -56,12 +56,11 @@ def speak(text: str, style: str = None):
             break
 
 
-    if detected_style == "random":
-        style = random.choice(STYLES)
-    elif detected_style:
+    if not detected_style or detected_style == "random":
+        style = "chat" if style is None else style
+    else:
         style = detected_style
-    elif style is None:
-        style = random.choice(STYLES)
+        
 
     speech_config = speechsdk.SpeechConfig(
         subscription=SPEECH_KEY,
