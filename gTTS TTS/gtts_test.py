@@ -1,5 +1,5 @@
-from gtts_text_to_speech import speak
-#from VAC_Versions.VAC_gtts_text_to_speech import speak
+#from gtts_text_to_speech import speak
+from VAC_Versions.VAC_gtts_text_to_speech import speak
 
 speak("(random) Testing GTTS! Boy I sure do feel like starring the repo I downloaded this from!")
 

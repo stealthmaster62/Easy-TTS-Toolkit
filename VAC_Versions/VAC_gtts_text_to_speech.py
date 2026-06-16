@@ -40,7 +40,10 @@ def speak(text_to_speak):
             else:
                 processed_audio = raw_audio
 
-            sd.play(processed_audio, sample_rate, blocking=True)
+            sd.play(processed_audio,
+                    sample_rate,
+                    blocking=True,
+                    device=_get_device_index)
         
         except (gtts.tts.gTTSError, sf.SoundFileError) as ahhellnah:
             print(f"gTTS generation error: {ahhellnah}")
