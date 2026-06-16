@@ -5,44 +5,24 @@ import sounddevice as sd
 import soundfile as sf
 import numpy as np
 
-polly_client = None
-_voice_id = ""
-    
-polly_client = boto3.client(
-    "polly",
-    aws_access_key_id=os.getenv("AWS_ACCESS_KEY"),
-    aws_secret_access_key=os.getenv("AWS_SECRET"),
-    region_name=os.getenv("AWS_REGION", "eu-north-1")
+ACCESS_KEY = os.getenv("AWS_ACCESS_KEY")
+AWS_SECRET = os.getenv("AWS_SECRET")
+AWS_REGION = "eu-north-1"
+
+
+client = boto3.client(
+    'polly',
+    aws_access_key_id=ACCESS_KEY,
+    aws_secret_access_key=AWS_SECRET,
+    region_name=AWS_REGION
 )
 
-_voice_id = "Brian"
-
-def speak(text: str) -> None:
-    if polly_client is None:
-        raise RuntimeError("AWS Polly client is not initialised. Call init() first.")
+def speak(text):
+    response = client.synthesize_speech(VoiceId='Brian',
+                    Text=text,
+                    OutputFormat='pcm',
+                    Engine='standard')
     
-    response = polly_client.synthesize_speech(
-        Text=text,
-        VoiceId=_voice_id,
-        OutputFormat="pcm",
-        Engine="standard"        
-    )
+    audio_data = response["AudioStream"].read()
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
-        path = f.name
-
-    with open(path, 'wb') as f:
-        for chunk in response:
-            if chunk:
-                f.write(chunk)
-
-    data = np.fromfile(path, dtype=np.int16).astype(np.float32) / 32768.0
-    samplerate = 44100
-
-    if data.ndim > 1:
-        data = data.mean(axis=1)
-    
-    sd.play(data, samplerate, blocking=True)
-
-sd.stop()
-    
+    np.frombuffer(audio_data, dtype=np.int16).astype(np.float32) / 32768.0
