@@ -88,15 +88,17 @@ def speak(text: str, style: str = None):
         region=SPEECH_REGION
     )
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio_file:
-        temp_file_path = temp_audio_file.name
+    temp_file_path = None
+    try:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio_file:
+            temp_file_path = temp_audio_file.name
 
-    synthesizer = speechsdk.SpeechSynthesizer(
-        speech_config=speech_config,
-        audio_config=speechsdk.audio.AudioOutputConfig(filename=temp_file_path)
-    )
+        synthesizer = speechsdk.SpeechSynthesizer(
+            speech_config=speech_config,
+            audio_config=speechsdk.audio.AudioOutputConfig(filename=temp_file_path)
+        )
 
-    ssml = f"""
+        ssml = f"""
 <speak version='1.0'
  xmlns='http://www.w3.org/2001/10/synthesis'
  xmlns:mstts='http://www.w3.org/2001/mstts'
@@ -111,21 +113,22 @@ def speak(text: str, style: str = None):
 </speak>
 """
 
-    result = synthesizer.speak_ssml_async(ssml).get()
+        result = synthesizer.speak_ssml_async(ssml).get()
 
-    if result.reason != speechsdk.ResultReason.SynthesizingAudioCompleted:
-        raise RuntimeError(f"TTS failed: {result.reason}")
+        if result.reason != speechsdk.ResultReason.SynthesizingAudioCompleted:
+            raise RuntimeError(f"TTS failed: {result.reason}")
 
-    audio_samples, sample_rate = sf.read(temp_file_path, dtype="float32")
+        audio_samples, sample_rate = sf.read(temp_file_path, dtype="float32")
 
-    if audio_samples.ndim > 1:
-        audio_samples = audio_samples.mean(axis=1)
+        if audio_samples.ndim > 1:
+            audio_samples = audio_samples.mean(axis=1)
 
-    sd.play(
-        audio_samples,
-        sample_rate,
-        device=_get_device_index(),
-        blocking=True
-    )
-
-    sd.stop()
+        sd.play(
+            audio_samples,
+            sample_rate,
+            device=_get_device_index(),
+            blocking=True
+        )
+    finally:
+        if temp_file_path and os.path.exists(temp_file_path):
+            os.remove(temp_file_path)
