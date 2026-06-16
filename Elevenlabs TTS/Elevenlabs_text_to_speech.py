@@ -1,11 +1,8 @@
 import os
-import tempfile
 from elevenlabs import play, stream
 from elevenlabs.client import ElevenLabs
 import sounddevice as sd
 import soundfile as sf
-from typing import IO
-from io import BytesIO
 import numpy as np
 import threading
 import queue
