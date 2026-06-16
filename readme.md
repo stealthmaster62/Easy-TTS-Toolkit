@@ -3,7 +3,7 @@
 Spoiler alert: this code is BAD
 It's a bit rushed so there's not much consistency between how each file works. But all that matters is that it works. #Pragmatism #slop
 
-This is my definitive easy use TTS toolkit! Written by [Miguel Arden](https://github.com/Miguel-Arden)
+This is my definitive easy use TTS toolkit! Written by [Miguel Arden](https://github.com/stealthmaster62)
 You are welcome to do literally whatever you want with this code, credit is appreciated but not necessary.
 
 ### Billing and safety notice
