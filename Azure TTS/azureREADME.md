@@ -18,8 +18,6 @@ The free tier of Azure speech is generally around 500k characters per month, but
 
 This code will synthesize every character you send to Azure, so long paragraphs or repeated calls can add up quickly. Use your own Azure account and review billing alerts before running heavy workloads.
 
-This repository and author are not responsible for any Azure charges.
-
 ## Usage
 
 There's 2 files here, the main one is "Azure_Text_to_speech.py", the other one is an addon for those of you who need to make

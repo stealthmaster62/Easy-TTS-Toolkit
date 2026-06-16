@@ -13,7 +13,7 @@ Simple voices that sound great!
 ### Cost and billing
 AWS Free Tier is only available for eligible accounts and is generally limited to the first 12 months. After that, Amazon Polly may charge per character depending on the voice model and region.
 
-Set an AWS budget alert and monitor your billing dashboard before using this code in production or with large amounts of text. This repository and author are not responsible for any AWS charges.
+Set an AWS budget alert and monitor your billing dashboard before using this code in production or with large amounts of text.
 
 ## Usage
 
