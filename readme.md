@@ -69,3 +69,13 @@ There's 11 voice styles you can use. The default voice style it uses if you don'
 You can read more info about all of these in their respective readme files.
 
 *hope you find this repo useful, I had fun making it! Apologies if it's crap*
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=stealthmaster62%2FEasy-TTS-Toolkit&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=stealthmaster62/Easy-TTS-Toolkit&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=stealthmaster62/Easy-TTS-Toolkit&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=stealthmaster62/Easy-TTS-Toolkit&type=date&legend=top-left" />
+ </picture>
+</a>
