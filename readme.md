@@ -1,5 +1,7 @@
 # Easy TTS toolkit
 
+![Static Badge](https://img.shields.io/badge/The-The)
+
 Spoiler alert: this code is BAD
 It's a bit rushed so there's not much consistency between how each file works. But all that matters is that it works. #Pragmatism #slop
 
