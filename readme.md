@@ -72,6 +72,9 @@ You can read more info about all of these in their respective readme files.
 
 *hope you find this repo useful, I had fun making it! Apologies if it's crap*
 
+## TODO
+- Volume control
+
 ## Star History
 
 <a href="https://www.star-history.com/?repos=stealthmaster62%2FEasy-TTS-Toolkit&type=date&legend=top-left">
