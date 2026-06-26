@@ -74,6 +74,7 @@ You can read more info about all of these in their respective readme files.
 
 ## TODO
 - Volume control
+- I should probably make these modules that you can just install with pip rather than making you need to add them to your projects. But in all honesty I'll probably never do that cause I can't be bothered
 
 ## Star History
 
