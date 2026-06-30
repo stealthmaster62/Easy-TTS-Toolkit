@@ -3,7 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/The-The)
 
 Spoiler alert: this code is BAD
-It's a bit rushed so there's not much consistency between how each file works. But all that matters is that it works. #Pragmatism #slop
+It's a bit rushed so there's not much consistency between how each file works. But all that matters is that it works. #Pragmatism #slop - I'll eventually make it less crap where you can just install these with pip and not need to copy the files. That'll be on here at some point
 
 This is my definitive easy use TTS toolkit! Written by [Miguel Arden](https://github.com/stealthmaster62)
 You are welcome to do literally whatever you want with this code, credit is appreciated but not necessary.
